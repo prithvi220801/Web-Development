@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+
+            background-image: url("resta.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+
+        }
+
+        .container {
+            display: -webkit-flex;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            margin: 12%;
+        }
+
+        #logbox {
+
+            padding: 10px;
+            margin: 50px auto;
+            width: 340px;
+            background-color: black;
+            -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+            -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 175%;
+            color: #757575;
+            font-weight: 300;
+        }
+
+        h1,
+        input {
+            font-family: "Open Sans", Helvetica, sans-serif;
+        }
+
+        .input {
+            width: 75%;
+            height: 50px;
+            display: block;
+            margin: 0 auto 15px;
+            padding: 0 15px;
+            border: none;
+            border-bottom: 2px solid #ebebeb;
+        }
+
+        .input:focus {
+            outline: none;
+            border-bottom-color: rgb(230, 25, 25) !important;
+        }
+
+        .input:hover {
+            border-bottom-color: #96414d;
+        }
+
+        .input:invalid {
+            box-shadow: none;
+        }
+
+        /*.pass:-webkit-autofill {
+            -webkit-box-shadow: 0 0 0 1000px white inset;
+        }*/
+
+        .inputButton {
+            position: relative;
+            width: 85%;
+            height: 50px;
+            display: block;
+            margin: 30px auto 30px;
+            color: white;
+            background-color: rgb(233, 27, 27);
+            border: none;
+            -webkit-box-shadow: 0 5px 0 #af0a0a;
+            -moz-box-shadow: 0 5px 0 #d31b1b;
+            box-shadow: 0 5px 0 #e00808;
+        }
+
+        .inputButton:hover {
+            top: 2px;
+            -webkit-box-shadow: 0 3px 0 #df6565;
+            -moz-box-shadow: 0 3px 0 #db474e;
+            box-shadow: 0 3px 0 #e7757b;
+        }
+
+        .inputButton:active {
+            top: 5px;
+            box-shadow: none;
+        }
+
+        .inputButton:focus {
+            outline: none;
+        }
+        .text-center{
+            color: grey;
+        }
+    </style>
+</head>
+
+<body>
+    <!--<?php
+    session_start();
+    include('php1.php');
+    $name=$_POST['email'];
+    $pass=$_POST['password'];
+    $s="select * from register where email='$name'";
+    $result=mysqli_query($conn,$s);
+    $num=mysqli_num_rows($result);
+    if($num==1){
+        echo "email alredy exists!";
+    }
+    else{
+        $reg="insert into register(user[email],user[pass])values('$name','$pass')";
+        mysqli_query($conn,$reg);
+        echo "registration Successful";
+    }
+    ?>-->
+
+    <div class="container">
+        <div class="col-md-6">
+            <div id="logbox">
+                <form id="signup" method="post" action="signup.php">
+                    <h1>Create an Account</h1>
+                    <input name="email" type="email" placeholder="Email address" class="input pass"
+                        required="required" />
+                    <input name="password" type="password" placeholder="Choose a password" required="required"
+                        class="input pass" />
+                    <input type="submit" value="Sign me up!" class="inputButton" />
+                    <div class="text-center">
+                        Already have an account? <a href="login.html" id="login_id">LOGIN</a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

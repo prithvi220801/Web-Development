@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background-image: url("resta.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+    #login{
+        margin: 0px;
+        padding: 0px;
+    }
+    #login .loginbox {
+      
+        width:320px;
+        height: 420px;
+        background:#000;
+        color: #fff;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        box-sizing: border-box;
+        padding: 70px 30px;
+    }
+    .avatar{
+        width: 92px;
+        height: 92px;
+        border-radius: 50%;
+        position: absolute;
+        top: -50px;
+        left: calc(50% - 50px);
+    
+    }
+    #login h1{
+        margin: 0px;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 22px;
+    
+    }
+    .loginbox p{
+        margin: 0px;
+        padding: 0px;
+        font-weight: bold;
+    
+    }
+    .loginbox input{
+        width:100%;
+        margin-bottom: 20px;
+    }
+    .loginbox input[type="email"],input[type="password"]
+    {
+        border:none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 14px;
+    }
+    .loginbox input[type="submit"]
+    {
+        border: none;
+        outline: none;
+        height: 40px;
+        background: #fb2525;
+        color:#fff;
+        font-size: 18px;
+        border-radius: 20px;
+    }
+    .loginbox input[type="submit"]:hover{
+        cursor: pointer;
+        background: #530707;
+        color: black;
+    }
+    .loginbox a{
+        text-decoration: none;
+        font-size: 13px;
+        line-height: 20px;
+        color: darkgrey;
+    }
+    .loginbox a:hover{
+        color:blue;
+    }
+</style>
+</head>
+<body>
+    <section id="login" >
+        <div class="loginbox">
+            <img src="log1.jpeg" class="avatar">
+
+            <h1>Login here</h1>
+            <form method="post" action="loginn.php">
+                <p>Email</p>
+                <input type="email" name="email" placeholder="Enter your emailID">
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter password">
+                <input type="submit" name="" value="Login"></br>
+                Dont have an account?<a href="signupp.html">signup</a>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

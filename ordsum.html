@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9f4d01211.js" crossorigin="anonymous"></script>
+    <title>cart</title>
+    <style>
+        #head .menu {
+            justify-content: center;
+            background-color: rgb(245, 168, 181);
+            margin: 15px 0px 0px 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: rgb(238, 174, 206);
+            justify-items: flex-end;
+        }
+
+        #head .menu {
+            padding: 15px;
+            text-decoration: none;
+
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: rgb(245, 168, 181);
+        }
+
+
+        .products-container {
+
+            max-width: 650px;
+            justify-content: space-around;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        .fa-times-circle {
+            font-size: 25px;
+            color: blue;
+            margin-left: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+            padding-right: 10px;
+        }
+
+        .product-header {
+            width: 100%;
+            max-width: 650px;
+            display: flex;
+            justify-content: flex-start;
+            border-bottom: 4px solid lightgrey;
+            margin: 0 auto;
+        }
+
+        .product-title {
+            width: 45%;
+            display: flex;
+        }
+
+        .price {
+            width: 15%;
+            border-bottom: 1PX solid lightgrey;
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity {
+            width: 30%;
+            border-bottom: 1px solid lightgrey;
+            display: flex;
+            align-items: center;
+        }
+
+        .total {
+            width: 10%;
+            border-bottom: 1PX solid lightgrey;
+            display: flex;
+            align-items: center;
+        }
+
+        .product {
+            width: 45%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        .products {
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .basketTotalContainer {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .basketTotalTitle {
+            width: 30%;
+        }
+
+        .basketTotal {
+            width: 10%;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .btn {
+            background-color: palevioletred;
+            border: none;
+            padding: 10px 10px;
+            white-space: nowrap;
+            margin: 10% 50%;
+        }
+
+        .products-container h1 {
+            text-align: center;
+            font-weight: bold;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .products-container img {
+            width: 12%;
+            padding: 10px 42%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .rate {
+            float: left;
+            height: 46px;
+            padding: 0 10px;
+        }
+
+        .rate:not(:checked)>input {
+            position: absolute;
+            top: -9999px;
+        }
+
+        .rate:not(:checked)>label {
+            float: right;
+            width: 1em;
+            overflow: hidden;
+            white-space: nowrap;
+            cursor: pointer;
+            font-size: 30px;
+            color: #ccc;
+        }
+
+        .rate:not(:checked)>label:before {
+            content: '★ ';
+        }
+
+        .rate>input:checked~label {
+            color: #ffc700;
+        }
+
+        .rate:not(:checked)>label:hover,
+        .rate:not(:checked)>label:hover~label {
+            color: #deb217;
+        }
+
+        .rate>input:checked+label:hover,
+        .rate>input:checked+label:hover~label,
+        .rate>input:checked~label:hover,
+        .rate>input:checked~label:hover~label,
+        .rate>label:hover~input:checked~label {
+            color: #c59b08;
+        }
+        .thanks{
+            background-color: rgb(245, 168, 181);
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            justify-content: center;
+            text-align: center;
+            color:blueviolet;
+        }
+        
+        .rate{
+            background-color: rgb(245, 168, 181);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            justify-content: center;
+            text-align: center;
+            padding:0% 45%;
+        }
+    </style>
+</head>
+
+</head>
+
+<body>
+    <section id=container>
+        <section id="head">
+            <div class="menu">
+                <a href="cart">
+                    <ion-icon name="basket"></ion-icon>cart<span>0</span>
+                </a>
+
+            </div>
+        </section>
+        <div class="products-container">
+            <img src="logochef.jpeg">
+            <h1>ORDER SUMMARY</h1>
+            <div class="product-header">
+                <h5 class="product-title">PRODUCT</h5>
+                <h5 class="price">PRICE</h5>
+                <h5 class="quantity">QUANTITY</h5>
+                <h5 class="total">TOTAL</h5>
+            </div>
+            <div class="products">
+
+            </div>
+        </div>
+        <div class="thanks">
+            <p>Thank you Once Again for Ordering with Again<br>
+                Your Delivery ID is PRIPRA000123456<br>
+                Delivery Staff ID:PRIPRASt000123<br><br>
+                let us know your Experience with PRIPRA</p>
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text">1 star</label>
+            </div>
+        </div>
+
+    </section>
+
+    <script src="shop.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

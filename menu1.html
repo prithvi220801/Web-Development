@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c9f4d01211.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <title>Menu</title>
+    <script>
+        function mylogin() {
+            alert("Your item added to cart");
+        }
+    </script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+
+            height: 100%;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1.75fr 300px;
+            min-height: 100vh;
+            min-height: -webkit-fill-available;
+            overflow: hidden;
+            margin: 35px 15px 0px 15px;
+
+        }
+
+        #foodcontainer {
+            background-color: bisque;
+            opacity: 1;
+            overflow: scroll;
+            overflow-x: hidden;
+            box-sizing: content-box;
+
+
+        }
+
+        .food-items {
+            display: none;
+
+        }
+
+        .cart-toggle {
+            display: block;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        #biryani,
+        #paneer,
+        #chicken,
+        #vegetable,
+        #chinese,
+        #south-indian {
+            margin-top: 40px;
+        }
+
+        #paneer #item-card,
+        #vegetable #item-card {
+            background: rgb(218, 253, 188);
+        }
+
+        #chinese #item-card,
+        #south-indian #item-card {
+            background: rgb(221, 243, 243);
+        }
+
+        #category-name,
+        .item-menu {
+            margin: 28px;
+            font-size: 35px;
+            color: brown;
+            font-family: 'MS UI Gothic';
+        }
+
+        #item-card {
+            width: 190px;
+            height: 220px;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            border-radius: 5px;
+            background: rgb(253, 221, 226);
+            cursor: pointer;
+            transition: 0.5s all step-end;
+        }
+
+        #item-card:hover img {
+            transform: scale(1.2);
+        }
+
+        #card-top {
+            display: flex;
+            margin: 5px 0;
+            justify-content: space-between;
+        }
+
+        #rating {
+            padding: 7px;
+            color: goldenrod;
+            background: black;
+            font-size: 14px;
+            border-radius: 15px;
+        }
+
+        .fa-heart-o {
+            padding: 6px;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            margin: 0px 0px 0px 87px;
+
+        }
+
+        .fa-heart-o:hover {
+            background-color: tomato;
+        }
+
+        .toggle-heart {
+            background: orangered;
+            color: white;
+
+        }
+
+        #item-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: auto;
+            display: block;
+            margin-bottom: 15px;
+            transition: 0.5s all ease-in-out;
+        }
+
+        #item-name {
+            margin: 5px 0;
+            font-weight: 600;
+            color: darkslategray;
+            font-size: 18px;
+        }
+
+        #item-price {
+            margin: 0;
+            color: rgb(2, 27, 27);
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+
+        .food-items {
+            display: none;
+        }
+
+        .cart-toggle {
+            display: none;
+        }
+
+        #cart {
+            background-color: whitesmoke;
+            padding-right: 30px;
+            overflow-y: scroll;
+
+        }
+
+        .item-menu {
+            margin: 30px 58px;
+            font-size: 25px;
+            font-family: 'Baloo Bhai', cursive;
+            color: purple;
+            background: whitesmoke;
+        }
+
+        .border {
+            width: 165px;
+            height: 4px;
+            margin: -30px 44px 0px 46px;
+            border-radius: 2px;
+            background: orchid;
+        }
+
+
+        .list-card {
+            display: flex;
+            align-items: center;
+            margin-top: 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3sec all ease-in-out;
+            border-bottom: 1px dotted grey;
+        }
+
+
+
+        .list-card:hover img {
+            transition: 0.5s all ease-in-out;
+            transform: scale(1.2);
+        }
+
+        .list-card img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 27px 2px -20px 13px;
+        }
+
+        .list-name {
+            font-size: 20px;
+            margin: 40px 0px 0px 9px;
+            text-decoration: none;
+            text-transform: capitalize;
+            color: rgb(94, 43, 43);
+        }
+
+        #head {
+
+
+            margin: 5px 15px 0px 15px;
+        }
+
+        #head .menu {
+            justify-content: center;
+
+            margin: 15px 0px 0px 0px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 15px;
+            color: rgb(255, 0, 0);
+            justify-items: flex-end;
+        }
+
+        #head .menu {
+            padding: 3px 0px 2px 0px;
+            text-decoration: none;
+
+        }
+
+        #head .menu a {
+            color: black;
+            text-decoration: none;
+            float: right;
+            padding-left: 25px;
+            padding-bottom: 10px;
+            font-weight: bold;
+            background-color: palevioletred;
+        }
+
+
+        .menu {
+            margin-top: 5px;
+        }
+
+        .add-cart {
+
+            position: absolute;
+
+        }
+
+        #header {
+            justify-content: center;
+            text-align: center;
+        }
+
+        #header h2 {
+            font-family: 'Abril Fatface', cursive;
+
+            font-size: 31px;
+            text-transform: uppercase;
+            color: purple;
+            padding-top: 15px;
+
+        }
+
+        #header p {
+            font-family: 'Ole', cursive;
+            color: black;
+            font-size: 28px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="header">
+        <h2>menu</h2>
+        <p>House of flavours </p>
+    </section>
+    <section id="head">
+        <div class="menu">
+            <a href="cart.html">
+                <ion-icon name="basket"></ion-icon>cart<span>0</span>
+            </a>
+
+        </div>
+    </section>
+    <div id="container" class="container">
+        <div id="foodcontainer">
+            <div id="fooditems">
+
+                <div id="biriyani">
+                    <p id="category-name">Biriyani</p>
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="Ambur-Chicken-Biryani.jpg">
+                        <p id="item-name">Ambur biriyani</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="hyd-Mutton-Biryani.jpg">
+                        <p id="item-name">Hyderbad biriyani</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="kamrupi-biryani.jpg">
+                        <p id="item-name">Kampiri biriyani</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="mughlai-biryani.jpg">
+                        <p id="item-name">Mulghai biriyani</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="egg-biryani.jpeg">
+                        <p id="item-name">Egg biriyani</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+                </div>
+
+
+
+                <div id="paneer">
+                    <p id="category-name">Paneer Mania</p>
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="palak-paneer.jpg">
+                        <p id="item-name">Palak paneer</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="paneer-butter-masala.jpg">
+                        <p id="item-name">Paneer-butter</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart" onclick="mylogin()"></i>
+                        </div>
+                        <img src="Paneer-Do-Pyaza.jpg">
+                        <p id="item-name">Paneer-Do-Pyaza</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                        </div>
+                        <img src="Paneer-Hyderabadi.jpg">
+                        <p id="item-name">Paneer-Hyderbadi</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                        </div>
+                        <img src="Matar-Paneer.jpg">
+                        <p id="item-name">Matar-Paneer</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+                </div>
+
+                <div id="chicken">
+                    <p id="category-name">Chicken Delicious </p>
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                        </div>
+                        <img src="Chicken-do-Pyaza.jpg">
+                        <p id="item-name">Chicken-do-Pyaza</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                        </div>
+                        <img src="Chicken-Curry.jpg">
+                        <p id="item-name">Chicken curry</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                        </div>
+                        <img src="Chicken-Masala.jpeg">
+                        <p id="item-name">Chicken-Masala</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="item-card">
+                        <div id="cardtop">
+                            <i class="fa fa-star" id="rating">$ .3</i>
+                            <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                        </div>
+                        <img src="Handi-chicken.jpg">
+                        <p id="item-name">Handi-chicken</p>
+                        <p id="item-price">price:$ 10</p>
+                    </div>
+
+                    <div id="vegetable">
+                        <p id="category-name">pure vegie</p>
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="vegetable-biryani.jpg">
+                            <p id="item-name">vegetable-biryani</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="vegetable-kolhapuri.jpg">
+                            <p id="item-name">Veg-kolhapuri</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="vegetable-masala.jpg">
+                            <p id="item-name">Vegetable-masala</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="vegetable-pakora.jpg">
+                            <p id="item-name">Vegetable-pakora</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="VEG-JALFREZI.jpg">
+                            <p id="item-name">Veg-jalfrezi</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+                    </div>
+
+                    <div id="chinese">
+                        <p id="category-name">Chinese Corner</p>
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="spring-rolls.jpg">
+                            <p id="item-name">Spring-rolls</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="szechuan-chicken.jpg">
+                            <p id="item-name">Szechuan-chicken</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="mmos.jpg">
+                            <p id="item-name">Mmos</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="chowmin.jpg">
+                            <p id="item-name">Chowmin</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+                    </div>
+
+                    <div id="south-indian">
+                        <p id="category-name">South Indian</p>
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="Butter-Masala-Dosa.png">
+                            <p id="item-name">Butter-dosa</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="masala-dosa.jpg">
+                            <p id="item-name">Masala-dosa</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="sambhar-vada.jpg">
+                            <p id="item-name">Sambhar-vada</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="mysore-bonda.jpg">
+                            <p id="item-name">Mysore-bonda</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+
+                        <div id="item-card">
+                            <div id="cardtop">
+                                <i class="fa fa-star" id="rating">$ .3</i>
+                                <i class="fa fa-heart-o add-to-cart" id="toggle-heart"onclick="mylogin()"></i>
+                            </div>
+                            <img src="idli-with-rice-flour.jpg">
+                            <p id="item-name">Idli</p>
+                            <p id="item-price">price:$ 10</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <div id="cart">
+            <div id="category-list">
+                <p class="item-menu">Go for hunt</p>
+                <div class="border"></div>
+                <div class="list-card">
+                    <img src="hyd-Mutton-Biryani.jpg">
+                    <a href="#biriyani" class="list-name">Biriyani</a>
+                </div>
+
+                <div class="list-card">
+                    <img src="palak-paneer.jpg">
+                    <a href="#Paneer" class="list-name">Paneer</a>
+                </div>
+
+                <div class="list-card">
+                    <img src="Chicken-Curry.jpg">
+                    <a href="#chicken" class="list-name">Chicken</a>
+                </div>
+
+                <div class="list-card">
+                    <img src="vegetable-masala.jpg">
+                    <a href="#vegetable" class="list-name">Veggies</a>
+                </div>
+
+                <div class="list-card">
+                    <img src="szechuan-chicken.jpg">
+                    <a href="#chinese" class="list-name">chinese</a>
+                </div>
+
+                <div class="list-card">
+                    <img src="mysore-bonda.jpg">
+                    <a href="#south-indian" class="list-name">south-indian</a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    <script src="shop.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>

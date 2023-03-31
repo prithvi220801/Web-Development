@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0cf9405edd.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>PriPra</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .vid-bg{
+            position:absolute;
+            right:0;
+            bottom:0;
+            height:117%;
+            width:100%;
+            min-width:100%;
+            min-height: 100%;
+        }
+        .fix{
+            clear:both;
+            overflow: hidden;
+        }
+        .header{
+            overflow: hidden;
+        }
+        .navbar {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            position:absolute;
+            width:100%;
+        }
+
+        .navbar div:hover {
+            background-color: rgba(75, 66, 42, 0.534);
+        }
+        .navbar a{
+            text-decoration: none;
+            color:white;
+        }
+        .item {
+            color: white;
+            padding: 15px 65px;
+        }
+
+        #item-1 {
+            display: flex;
+            background-color: transparent;
+            flex-grow: 2;
+            color: rgb(252, 247, 247);
+            font-weight: bold;
+            text-align: right;
+        }
+
+        #item-1 h1 {
+            padding: 0px 10px;
+            font-size: 38px;
+            font-family: "Brush Script MT";
+        }
+
+        /*.container {
+            background-image: url("ff.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }*/
+
+        #button {
+            padding: 12px 10px;
+            position: relative;
+            right: 107px;
+            background-color: rgba(238, 16, 16, 0.925);
+            border: none;
+            color: white;
+        }
+        #button a{
+            text-decoration: none;
+            color:white;
+        }
+
+        #button:hover {
+            background-color: brown;
+        }
+
+        #inner1 {
+            text-align: center;
+            font-size: 25px;
+            position: relative;
+        }
+        #inner2{
+            font-family: 'Pacifico', cursive;
+            color:white;
+            font-weight:700;
+            font-size:61px;
+            text-align: center;
+            position: relative;
+        }
+        #inner {
+            margin: 25px 100px;
+            padding: 10px 10px;
+            position: relative;
+        }
+
+        .details {
+            padding: 230px 490px;
+        }
+
+        .details h1 {
+            font-size: 32px;
+        }
+
+        .details span {
+            color: rgb(251, 255, 0);
+        }
+
+        #about {
+            padding: 40px;
+            background-color: rgb(22, 21, 18);
+        }
+        .title-text{
+            text-align: center;
+            color:rgb(233, 201, 142);
+            font-size: 50px;
+        }
+        .about {
+            margin: 35px 410px;
+            display: flex;
+            border:2px solid rgb(245, 216, 163);
+            justify-content: center;
+            padding:18px;
+            color:cornsilk;
+            background-attachment: fixed;
+        }
+        .about-icon .fas{
+            font-size: 60px;
+            color: rgb(248, 240, 171);
+            margin-right: 20px;
+        }
+
+        .about-subtitle {
+            text-transform: capitalize;
+            color: rgb(250, 228, 189);
+            font-size: 25px;
+        }
+
+        .about-info {
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+
+        .about-icon:hover .fas,
+        .about-subtitle:hover {
+            transition: transform 2s ease, color 2s ease;
+            transform: translateY(-10px);
+            color: #e07d27;
+            cursor: pointer;
+        }
+        .footer{
+            padding:80px 0;
+            background-image: url("front1.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-attachment: fixed;
+            background-position:center;
+            position:relative;
+        }
+        .footer::before{
+            content:'';
+            position:absolute;
+            left:0;
+            top:0;
+            width:100%;
+            height:100%;
+            background-color:rgba(0, 0, 0, 0.7);
+            z-index:-1;
+        }
+        .footer-item{
+            width:calc(100%/3);
+            padding:0 15px;
+            text-align:center;
+            color:white;
+        }
+        .footer-item h3{
+            text-transform:capitalize;
+            font-size:22px;
+            margin:0 0 15px;
+        }
+        .footer-item p{
+            line-height: 30px;
+        }
+        .footer-item .social-links a{
+            margin-top:15px;
+        }
+        .footer-item .social-links a{
+            display:inline-flex;
+            height:40px;
+            width:40px;
+            background-color:rgb(10, 9, 9);
+            color:white;
+            font-size:22px;
+            align-items:center;
+            justify-content:center;
+            transition:color 0.3s ease;
+            text-decoration: none;
+        }
+        .footer-item .social-links a:hover{
+            color:purple;
+        }
+        .footer .copyright{
+            margin:80px 0 0;
+            width:100%;
+            text-align:center;
+            padding:25px 16px;
+            font-size:18px;
+            border-top:1px solid rgb(245, 245, 245);
+            color:White;
+            font-weight: bold;
+            background-color: rgba(18,19,17,0.5);
+        }
+        .row{
+            display: flex;
+        }
+        .container{
+            background-color: rgba(15,94,45,0.5);
+        }
+        .footer-item a{
+            text-decoration: none;
+            color:white;
+        }
+        .footer-item a:hover{
+            color:blue;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="fix">
+        <video src="v6.mp4" class="vid-bg" autoplay loop muted></video>
+
+    <nav class="navbar">
+        <div class="item" id="item-1"><img src="logochef.jpeg" alt="logo" width="60px" height="55px">
+            <h1>Pripra</h1>
+        </div>
+        <div class="item" id="item-2"><a href="#about">ABOUT US</a></div>
+        <div class="item" id="item-4"><a href="#footer">CONTACT US</a></div>
+        <div class="item" id="item-6"><a href="menu1.html">MENU</a></div>
+        <div class="item" id="item-7"><a href="login.html">LOGIN</a></div>
+        <div class="item" id="item-8"><a href="signupp.html">SIGN UP</a></div>
+    </nav>
+    <div class="container">
+        <div class="details">
+            <h5 id="inner1" style="color:white">Food & Taste</h5><br>
+            <h1 id="inner2" style="color:white">Welcome to <span>Pripra</span>, the house of Taste</h1><br>
+            <!--<input id="inner" type="search" placeholder="Search your favorite food here"
+                style="width:248px;height:40px;">
+            <button type="button" id="button" style="width:75px;font-weight: 700;"><a href="#" onclick="window.open('login.html')">FIND</a></button>-->
+        </div>
+    </div>
+    <section id="about">
+        <div>
+            <h2 class="title-text">About Us</h2>
+        </div>
+        <div class="about-center">
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-mug-hot"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Drinks</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-utensils"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Healthy Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-mortar-pestle"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Organic Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-drumstick-bite"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">White Meat</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-fish"></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Sea Food</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+            <article class="about">
+                <div class="about-icon"><i class="fas fa-pepper-hot "></i></div>
+                <div class="about-text">
+                    <h2 class="about-subtitle">Hot & Spicy</h2>
+                    <p class="about-info">Lorem ipsum dolor sit amet, consectetur
+                        adipisicing elit. Quisquam, temporibus!</p>
+                </div>
+            </article>
+        </div>
+    </section>
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-item">
+                    <h3>Our Location</h3>
+                    <p>Nitte Mahalinga Adyanthaya Memorial sector<br>Nitte,Karkala-574111</p><br>
+                    <a href="map.html"><i class="fa fa-map-marker" aria-hidden="true"></i>View Location</a>
+                </div>
+                <div class="footer-item">
+                    <h3>Opening Hours</h3>
+                    <p>Monday to Sunday <br> 9.00 AM - 11.30PM</p>
+                </div>
+                <div class="footer-item">
+                    <h3>Contact Us</h3>
+                    <p>+91 99999 00000</p>
+                    <p>0824-225512</p>
+                    <p>abcdefg@gmail.com</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/prithvi.gt/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/prithvi.gt/"><i class="fab fa-instagram"></i></a>
+                        <a href="https://twitter.com/pratheekotian12?t=z9Auy972tNUrbZnEEkJRpw&s=08"><i class="fab fa-twitter"></i></a>
+                        <a href="https://youtu.be/yMclPkD4sQg
+                        "><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="copyright">
+                    &copy;2021 - Designed By Prithvi & Pratheeksha
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
